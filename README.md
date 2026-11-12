@@ -1,6 +1,6 @@
 # WFI Prototype
 
-Interactive prototype of the Workforce Insights **Admin Agent home** from Dominic’s portfolio Figma file, plus the Data Access panel/modal flow.
+Interactive prototype of the Workforce Insights **Admin Agent home** used for testing and playing around for Dominic's portfolio presentations and job search. Designs are based on Figma files.
 
 ## What’s included
 
