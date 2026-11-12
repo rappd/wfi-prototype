@@ -3,31 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WFI Prototype · Data Access</title>
+    <title>WFI Prototype · Home</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="app" id="app">
-      <!-- Left app rail -->
       <aside class="rail" aria-label="App rail">
-        <button class="rail-btn" aria-label="Home" title="Home">
-          <span class="icon-grid"></span>
+        <button class="rail-btn" type="button" aria-label="Home" title="Home">
+          <span class="dot-grid" aria-hidden="true"></span>
         </button>
-        <button class="rail-btn" aria-label="New" title="New">
-          <span class="icon-compose"></span>
+        <button class="rail-btn" type="button" aria-label="New" title="New">
+          <img src="./assets/add.svg" alt="" width="16" height="16" />
         </button>
-        <button class="rail-btn" aria-label="Search" title="Search">
-          <span class="icon-search-sm"></span>
+        <button class="rail-btn" type="button" aria-label="Search" title="Search">
+          <img src="./assets/search.svg" alt="" width="16" height="16" />
         </button>
-        <button class="rail-btn" aria-label="Code" title="Code">
-          <span class="icon-code"></span>
+        <button class="rail-btn" type="button" aria-label="Analytics" title="Analytics">
+          <span class="chart-mark" aria-hidden="true"></span>
         </button>
-        <button class="rail-btn" aria-label="Files" title="Files">
-          <span class="icon-folder"></span>
+        <button class="rail-btn" type="button" aria-label="Files" title="Files">
+          <span class="folder-mark" aria-hidden="true"></span>
         </button>
         <div class="rail-spacer"></div>
-        <button class="rail-btn" aria-label="Pinned" title="Pinned">
-          <span class="icon-pin"></span>
+        <button class="rail-btn" type="button" aria-label="Share" title="Share">
+          <span class="share-mark" aria-hidden="true"></span>
         </button>
         <div class="rail-avatar" aria-hidden="true">DR</div>
       </aside>
@@ -39,131 +38,269 @@
             <img src="./assets/chevron.svg" alt="" width="16" height="16" />
           </button>
           <div class="topbar-actions">
-            <button class="icon-btn" aria-label="Notifications" type="button"></button>
-            <button class="icon-btn" aria-label="Security" type="button"></button>
-            <button class="icon-btn" aria-label="More" type="button">···</button>
+            <button class="icon-btn" type="button" aria-label="Chat">
+              <img src="./assets/chat.svg" alt="" width="20" height="20" />
+            </button>
+            <button class="icon-btn" type="button" aria-label="Security">
+              <img src="./assets/shield-task.svg" alt="" width="20" height="20" />
+            </button>
+            <button class="icon-btn" type="button" aria-label="More">
+              <img src="./assets/more.svg" alt="" width="20" height="20" />
+            </button>
           </div>
         </header>
 
         <div class="workspace">
-          <!-- Main canvas -->
           <main class="canvas" id="canvas">
-            <section class="hero">
+            <section class="hero" data-node-id="2050:7756">
               <div class="brand-row">
-                <div class="brand-mark" aria-hidden="true"></div>
+                <div class="brand-mark" aria-hidden="true">
+                  <img src="./assets/agent-icon.svg" alt="" width="27" height="27" />
+                </div>
                 <h1>Workforce Insights</h1>
               </div>
               <p class="tagline">
                 Real-time insights across
                 <button class="org-chip" type="button">
-                  <span class="org-logo" aria-hidden="true"></span>
-                  Contoso
-                  <img src="./assets/chevron.svg" alt="" width="16" height="16" />
+                  <img class="org-avatar" src="./assets/avatar-fill.png" alt="" width="20" height="20" />
+                  <span>your team</span>
+                  <img src="./assets/chevron-brand.svg" alt="" width="16" height="16" />
                 </button>
               </p>
             </section>
 
-            <section class="chat-input" aria-label="Ask Workforce Insights">
-              <button class="plus-btn" type="button" aria-label="Add">+</button>
-              <input
-                id="askInput"
-                type="text"
-                placeholder="Ask about your team or organization"
-              />
-              <button class="icon-btn soft" type="button" aria-label="Voice"></button>
-              <button class="send-btn" type="button" aria-label="Send"></button>
+            <section class="composer" data-node-id="2050:7771" aria-label="Ask Workforce Insights">
+              <div class="composer-row">
+                <button class="ghost-icon" type="button" aria-label="Add">
+                  <img src="./assets/add.svg" alt="" width="20" height="20" />
+                </button>
+                <div class="composer-field">
+                  <input
+                    id="askInput"
+                    type="text"
+                    placeholder="Ask about your team or organization"
+                  />
+                  <button class="ghost-icon" type="button" aria-label="Voice">
+                    <img src="./assets/mic.svg" alt="" width="20" height="20" />
+                  </button>
+                </div>
+                <button class="eq-btn" type="button" aria-label="Voice mode">
+                  <img src="./assets/device-eq.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
+              <div class="suggestion-row">
+                <button type="button">Organization composition</button>
+                <button type="button">Geo-distributed teams</button>
+                <button type="button">Skills</button>
+                <button type="button">WFI Setup</button>
+                <button type="button" class="more-chip" aria-label="More prompts">
+                  <img src="./assets/more.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
             </section>
 
-            <div class="suggestion-row" aria-label="Suggested prompts">
-              <button type="button">Organization composition</button>
-              <button type="button">Geo-distributed teams</button>
-              <button type="button">Skills</button>
-              <button type="button">WFI Setup</button>
-              <button type="button" class="more">···</button>
-            </div>
-
-            <section class="setup">
+            <section class="setup" data-node-id="2050:7774">
               <h2>Setup &amp; management</h2>
-              <p class="role-line">Your role: <strong>Global admin</strong></p>
+              <p class="role-line">Your role: Global admin</p>
               <p class="setup-copy">
                 Based on your role, control what organizational data is used to generate
                 insights, describe what that data means, and choose who can access it.
               </p>
 
-              <h3 class="section-title">Manage data &amp; context</h3>
-              <div class="card-grid">
-                <article class="mgmt-card">
-                  <div class="card-icon shield" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h4>Attributes &amp; access policies</h4>
+              <section class="mgmt-section" data-node-id="2050:7853">
+                <h3>Manage data &amp; context</h3>
+                <div class="card-grid">
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/shield-task.svg" alt="" width="28" height="28" />
+                      <h4>Attributes &amp; access policies</h4>
+                    </div>
                     <p>
                       Upload data attributes used to generate insights. Manage policies
                       to choose who gets access.
                     </p>
-                    <button class="btn secondary" type="button" data-open-panel>
+                    <button class="btn secondary" type="button" data-open-panel data-tab-target="attributes">
+                      <img src="./assets/open.svg" alt="" width="20" height="20" />
                       Open attributes &amp; access policies
                     </button>
-                  </div>
-                </article>
+                  </article>
 
-                <article class="mgmt-card">
-                  <div class="card-icon doc" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h4>Org context</h4>
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/document-text.svg" alt="" width="28" height="28" />
+                      <h4>Org context</h4>
+                    </div>
                     <p>
                       Give broad context about your organization, such as commonly-used
                       phrases and acronyms.
                     </p>
-                    <p class="status">Status: Not set up yet</p>
+                    <p class="status"><strong>Status:</strong> Not set up yet</p>
                     <div class="btn-stack">
-                      <button class="btn secondary" type="button">Help me set up org context</button>
-                      <button class="btn secondary" type="button">Manage org context</button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/chat.svg" alt="" width="20" height="20" />
+                        Help me set up org context
+                      </button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/settings.svg" alt="" width="20" height="20" />
+                        Manage org context
+                      </button>
                     </div>
-                  </div>
-                </article>
+                  </article>
 
-                <article class="mgmt-card">
-                  <div class="card-icon list" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h4>Attribute descriptions</h4>
-                    <p>
-                      Describe attributes so the agent understands how to use them in
-                      answers.
-                    </p>
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/list-square.svg" alt="" width="28" height="28" />
+                      <h4>Attribute descriptions</h4>
+                    </div>
+                    <p>Describe what each attribute in your org data represents.</p>
+                    <p class="status"><strong>Status:</strong> Not set up yet</p>
                     <div class="btn-stack">
-                      <button class="btn secondary" type="button">Help me describe attributes</button>
-                      <button class="btn secondary" type="button">Manage descriptions</button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/chat.svg" alt="" width="20" height="20" />
+                        Help me add descriptions
+                      </button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/settings.svg" alt="" width="20" height="20" />
+                        Manage descriptions
+                      </button>
                     </div>
-                  </div>
-                </article>
+                  </article>
 
-                <article class="mgmt-card highlight" id="dataAccessCard">
-                  <div class="card-icon handshake" aria-hidden="true"></div>
-                  <div class="card-body">
-                    <h4>Data access</h4>
+                  <article class="mgmt-card" id="dataAccessCard">
+                    <div class="card-head">
+                      <img src="./assets/handshake.svg" alt="" width="28" height="28" />
+                      <h4>Data access</h4>
+                    </div>
                     <p>
-                      Choose who can access additional organizational data beyond their
-                      own team.
+                      Learn how team leaders can give other users access to their team's
+                      non-public data.
                     </p>
                     <button class="btn secondary" type="button" data-open-panel>
-                      Manage data access
+                      <img src="./assets/open.svg" alt="" width="20" height="20" />
+                      Open data access
                     </button>
-                  </div>
-                </article>
+                  </article>
+                </div>
+              </section>
+
+              <section class="mgmt-section" data-node-id="2050:7916">
+                <h3>Customize the agent</h3>
+                <div class="card-grid customize-grid">
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/agents.svg" alt="" width="28" height="28" />
+                      <h4>Deployment</h4>
+                    </div>
+                    <p>
+                      Install the Workforce Insights agent automatically for other users
+                      and groups in your org.
+                    </p>
+                    <button class="btn secondary" type="button">
+                      <img src="./assets/open.svg" alt="" width="20" height="20" />
+                      Deploy Workforce Insights
+                    </button>
+                  </article>
+
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/comment-text.svg" alt="" width="28" height="28" />
+                      <h4>Custom AI disclaimer</h4>
+                    </div>
+                    <p>
+                      Include your organization’s guidance on handling AI data in a
+                      disclaimer message.
+                    </p>
+                    <div class="btn-stack">
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/chat.svg" alt="" width="20" height="20" />
+                        Help me set up the disclaimer
+                      </button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/settings.svg" alt="" width="20" height="20" />
+                        Manage disclaimer
+                      </button>
+                    </div>
+                  </article>
+
+                  <article class="mgmt-card">
+                    <div class="card-head">
+                      <img src="./assets/prompt.svg" alt="" width="28" height="28" />
+                      <h4>Organization-specific prompts</h4>
+                    </div>
+                    <p>Customize the starting prompts users see in the agent.</p>
+                    <p class="status"><strong>Status:</strong> Not set up yet</p>
+                    <div class="btn-stack">
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/chat.svg" alt="" width="20" height="20" />
+                        Help me set up prompts
+                      </button>
+                      <button class="btn secondary" type="button">
+                        <img src="./assets/settings.svg" alt="" width="20" height="20" />
+                        Manage prompts
+                      </button>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </section>
+
+            <section class="history" data-node-id="2050:7970">
+              <div class="history-header">
+                <h3>History</h3>
               </div>
+              <ul class="history-list">
+                <li>
+                  <span class="history-title">Strategic Planning: Weekly Snapshot</span>
+                  <span class="history-status">
+                    <img src="./assets/action-status.svg" alt="" width="14" height="14" />
+                    Complete
+                  </span>
+                  <span class="history-date">Yesterday</span>
+                  <button class="icon-btn" type="button" aria-label="More actions">
+                    <img src="./assets/more-horizontal.svg" alt="" width="20" height="20" />
+                  </button>
+                </li>
+                <li>
+                  <span class="history-title">Worksite Alignment</span>
+                  <span class="history-status">
+                    <img src="./assets/action-status.svg" alt="" width="14" height="14" />
+                    Complete
+                  </span>
+                  <span class="history-date">Jun 31</span>
+                  <button class="icon-btn" type="button" aria-label="More actions">
+                    <img src="./assets/more-horizontal.svg" alt="" width="20" height="20" />
+                  </button>
+                </li>
+                <li>
+                  <span class="history-title">New hires in Redmond</span>
+                  <span class="history-status">
+                    <img src="./assets/action-status.svg" alt="" width="14" height="14" />
+                    Complete
+                  </span>
+                  <span class="history-date">Jun 24</span>
+                  <button class="icon-btn" type="button" aria-label="More actions">
+                    <img src="./assets/more-horizontal.svg" alt="" width="20" height="20" />
+                  </button>
+                </li>
+                <li>
+                  <span class="history-title">Employees working remote</span>
+                  <span class="history-status">
+                    <img src="./assets/action-status.svg" alt="" width="14" height="14" />
+                    Complete
+                  </span>
+                  <span class="history-date">May 12</span>
+                  <button class="icon-btn" type="button" aria-label="More actions">
+                    <img src="./assets/more-horizontal.svg" alt="" width="20" height="20" />
+                  </button>
+                </li>
+              </ul>
             </section>
           </main>
 
-          <!-- Data settings panel (matches portfolio prototype slide) -->
-          <aside
-            class="panel"
-            id="dataPanel"
-            hidden
-            aria-label="Access and data settings"
-          >
+          <aside class="panel" id="dataPanel" hidden aria-label="Access and data settings">
             <div class="panel-header">
               <div class="panel-title-row">
-                <span class="panel-shield" aria-hidden="true"></span>
+                <img src="./assets/shield-task.svg" alt="" width="24" height="24" />
                 <h2>Access &amp; data settings</h2>
               </div>
               <button class="icon-btn" id="closePanel" type="button" aria-label="Close panel">
@@ -172,24 +309,10 @@
             </div>
 
             <div class="tabs" role="tablist" aria-label="Settings sections">
-              <button
-                class="tab active"
-                role="tab"
-                aria-selected="true"
-                id="tab-access"
-                data-tab="access"
-                type="button"
-              >
+              <button class="tab active" role="tab" aria-selected="true" data-tab="access" type="button">
                 Access
               </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                id="tab-attributes"
-                data-tab="attributes"
-                type="button"
-              >
+              <button class="tab" role="tab" aria-selected="false" data-tab="attributes" type="button">
                 Attributes
               </button>
             </div>
@@ -201,7 +324,7 @@
                 <a href="#" class="link">Learn more about managing Workforce Insights</a>
               </p>
 
-              <section class="org-card" data-node-id="4391:46583">
+              <section class="org-card">
                 <button class="org-card-toggle" type="button" id="toggleOrgCard" aria-expanded="true">
                   <span>Your organizational data</span>
                   <img
@@ -213,15 +336,12 @@
                     id="orgChevron"
                   />
                 </button>
-
                 <div class="org-card-body" id="orgCardBody">
                   <p>
                     These people are allowed access to additional organizational data.
                     Limit their scope of access or remove their access any time.
                   </p>
-
                   <ul class="people-list" id="peopleList" hidden></ul>
-
                   <button class="btn secondary" id="giveAccessBtn" type="button">
                     Give access
                   </button>
@@ -263,15 +383,8 @@
       </div>
     </div>
 
-    <!-- Grant data access modal -->
     <div class="overlay" id="overlay" hidden>
-      <div
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalTitle"
-        data-node-id="3559:35183"
-      >
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-header">
           <div>
             <h2 id="modalTitle">Grant data access</h2>
@@ -284,23 +397,16 @@
             <img src="./assets/dismiss.svg" alt="" width="20" height="20" />
           </button>
         </div>
-
         <div class="modal-body">
           <label class="field">
             <span class="label">Grant access to:</span>
             <div class="search-field">
               <img src="./assets/search.svg" alt="" width="20" height="20" />
-              <input
-                id="personSearch"
-                type="search"
-                placeholder="Search"
-                autocomplete="off"
-              />
+              <input id="personSearch" type="search" placeholder="Search" autocomplete="off" />
             </div>
             <ul class="suggestions" id="personSuggestions" hidden></ul>
             <div class="selected-person" id="selectedPerson" hidden></div>
           </label>
-
           <label class="field">
             <span class="label">Add a message <em>(optional)</em></span>
             <textarea
@@ -310,7 +416,6 @@
             ></textarea>
           </label>
         </div>
-
         <div class="modal-footer">
           <button class="btn primary" id="grantAccessBtn" type="button" disabled>
             Grant access
@@ -320,7 +425,6 @@
     </div>
 
     <div class="toast" id="toast" hidden role="status"></div>
-
     <script src="./app.js"></script>
   </body>
 </html>

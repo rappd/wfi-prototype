@@ -49,10 +49,10 @@ function showToast(message) {
   }, 2600);
 }
 
-function openPanel() {
+function openPanel(tab = "access") {
   state.panelOpen = true;
   els.panel.hidden = false;
-  document.getElementById("dataAccessCard")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  setTab(tab);
 }
 
 function closePanel() {
@@ -177,7 +177,18 @@ function grantAccess() {
 }
 
 document.querySelectorAll("[data-open-panel]").forEach((button) => {
-  button.addEventListener("click", openPanel);
+  button.addEventListener("click", () => {
+    openPanel(button.dataset.tabTarget || "access");
+  });
+});
+
+document.querySelectorAll(".suggestion-row button:not(.more-chip)").forEach((button) => {
+  button.addEventListener("click", () => {
+    const askInput = document.getElementById("askInput");
+    if (!askInput) return;
+    askInput.value = button.textContent.trim();
+    askInput.focus();
+  });
 });
 
 document.getElementById("closePanel").addEventListener("click", closePanel);
@@ -227,6 +238,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Start with the panel open so the portfolio prototype is immediately visible.
-openPanel();
+closePanel();
 renderPeople();

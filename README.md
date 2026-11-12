@@ -1,21 +1,18 @@
 # WFI Prototype
 
-Interactive prototype of the Workforce Insights **Data Access** experience from Dominic’s portfolio Figma file.
+Interactive prototype of the Workforce Insights **Admin Agent home** from Dominic’s portfolio Figma file, plus the Data Access panel/modal flow.
 
 ## What’s included
 
-- **Home / Setup & management** canvas with management cards
+- **Home** — hero, underline composer + suggestion chips, Setup & management, Manage data & context cards, Customize the agent, History
 - **Access & data settings** side panel (`Access` / `Attributes` tabs)
-- **Your organizational data** card with expand/collapse
 - **Give access** → **Grant data access** modal with people search
 - Granted people list + toast confirmation
 
-Source frames (Figma):
+Source frames (Figma file `Jk4gLd2W6PlAJJwOvErtX0`):
 
-- Home: `J0B5sRxINhdAS16hWojsGU` / `532791:201688`
-- Data Access panel: `4391:46121`
-- Org data card: `4391:46583`
-- Grant modal: `3559:35183`
+- Home: `2050:7750`
+- Data Access panel / modal from earlier WFI Data Access frames (wired via **Open data access**)
 
 ## Run locally
 
@@ -35,11 +32,8 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ## GitHub
 
-```bash
-git status
-git add .
-git commit -m "Add WFI Data Access interactive prototype"
-git push -u origin main
-```
+Repo create/push is waiting on `gh auth login`. After you’re signed in:
 
-If this repo isn’t linked yet, create a remote with GitHub CLI after `gh auth login`.
+```bash
+gh repo create wfi-prototype --private --source=. --remote=origin --push
+```
