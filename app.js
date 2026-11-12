@@ -16,7 +16,8 @@ const state = {
 };
 
 const els = {
-  panel: document.getElementById("dataPanel"),
+  panel: document.getElementById("sidePanel"),
+  backdrop: document.getElementById("sidePanelBackdrop"),
   overlay: document.getElementById("overlay"),
   toast: document.getElementById("toast"),
   peopleList: document.getElementById("peopleList"),
@@ -52,12 +53,16 @@ function showToast(message) {
 function openPanel(tab = "access") {
   state.panelOpen = true;
   els.panel.hidden = false;
+  els.backdrop.hidden = false;
+  document.body.style.overflow = "hidden";
   setTab(tab);
 }
 
 function closePanel() {
   state.panelOpen = false;
   els.panel.hidden = true;
+  els.backdrop.hidden = true;
+  document.body.style.overflow = "";
 }
 
 function setTab(tab) {
@@ -226,6 +231,8 @@ els.peopleList.addEventListener("click", (event) => {
   renderPeople();
   showToast("Access updated");
 });
+
+els.backdrop.addEventListener("click", closePanel);
 
 els.overlay.addEventListener("click", (event) => {
   if (event.target === els.overlay) closeModal();

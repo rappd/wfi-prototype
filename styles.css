@@ -131,8 +131,7 @@ a.link:hover { text-decoration: underline; }
 .topbar-actions { display: flex; gap: 4px; }
 
 .workspace {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display: block;
   min-height: calc(100vh - 56px);
 }
 
@@ -480,14 +479,30 @@ a.link:hover { text-decoration: underline; }
   justify-self: start;
 }
 
-.panel {
-  width: min(560px, 42vw);
+.side-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 30;
+}
+.side-panel-backdrop[hidden] { display: none; }
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50vw;
+  max-width: 100%;
   border-left: 1px solid var(--stroke-2);
   background: var(--bg-1);
   padding: 20px 24px 32px;
   overflow: auto;
+  z-index: 31;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+  transform: translateX(0);
 }
-.panel[hidden] { display: none; }
+.side-panel[hidden] { display: none; }
 
 .panel-header {
   display: flex;
@@ -750,12 +765,7 @@ a.link:hover { text-decoration: underline; }
 .toast[hidden] { display: none; }
 
 @media (max-width: 720px) {
-  .workspace { grid-template-columns: 1fr; }
-  .panel {
-    width: 100%;
-    border-left: 0;
-    border-top: 1px solid var(--stroke-2);
-  }
+  .side-panel { width: 100vw; }
   .card-grid { grid-template-columns: 1fr; }
   .canvas { padding: 24px 20px 48px; }
   .history-list li {

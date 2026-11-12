@@ -296,92 +296,100 @@
               </ul>
             </section>
           </main>
-
-          <aside class="panel" id="dataPanel" hidden aria-label="Access and data settings">
-            <div class="panel-header">
-              <div class="panel-title-row">
-                <img src="./assets/shield-task.svg" alt="" width="24" height="24" />
-                <h2>Access &amp; data settings</h2>
-              </div>
-              <button class="icon-btn" id="closePanel" type="button" aria-label="Close panel">
-                <img src="./assets/dismiss.svg" alt="" width="20" height="20" />
-              </button>
-            </div>
-
-            <div class="tabs" role="tablist" aria-label="Settings sections">
-              <button class="tab active" role="tab" aria-selected="true" data-tab="access" type="button">
-                Access
-              </button>
-              <button class="tab" role="tab" aria-selected="false" data-tab="attributes" type="button">
-                Attributes
-              </button>
-            </div>
-
-            <div class="tab-panel" id="panel-access" role="tabpanel">
-              <p class="panel-intro">
-                Managers in your organization can access data about their own teams in
-                Workforce Insights. You can set up access to additional org data.
-                <a href="#" class="link">Learn more about managing Workforce Insights</a>
-              </p>
-
-              <section class="org-card">
-                <button class="org-card-toggle" type="button" id="toggleOrgCard" aria-expanded="true">
-                  <span>Your organizational data</span>
-                  <img
-                    src="./assets/chevron.svg"
-                    alt=""
-                    width="20"
-                    height="20"
-                    class="chevron open"
-                    id="orgChevron"
-                  />
-                </button>
-                <div class="org-card-body" id="orgCardBody">
-                  <p>
-                    These people are allowed access to additional organizational data.
-                    Limit their scope of access or remove their access any time.
-                  </p>
-                  <ul class="people-list" id="peopleList" hidden></ul>
-                  <button class="btn secondary" id="giveAccessBtn" type="button">
-                    Give access
-                  </button>
-                </div>
-              </section>
-            </div>
-
-            <div class="tab-panel" id="panel-attributes" role="tabpanel" hidden>
-              <p class="panel-intro">
-                Review and manage the attributes used to generate Workforce Insights.
-                Attributes without descriptions may be excluded from answers.
-              </p>
-              <div class="attr-list">
-                <div class="attr-row">
-                  <div>
-                    <strong>Job family</strong>
-                    <p>Groups roles used for span and composition insights.</p>
-                  </div>
-                  <span class="badge ok">Described</span>
-                </div>
-                <div class="attr-row">
-                  <div>
-                    <strong>Location</strong>
-                    <p>City and region used for geo-distributed team views.</p>
-                  </div>
-                  <span class="badge warn">Needs description</span>
-                </div>
-                <div class="attr-row">
-                  <div>
-                    <strong>Manager hierarchy</strong>
-                    <p>Reporting relationships for team-scoped access.</p>
-                  </div>
-                  <span class="badge ok">Described</span>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </div>
+
+    <div class="side-panel-backdrop" id="sidePanelBackdrop" hidden></div>
+    <aside
+      class="side-panel"
+      id="sidePanel"
+      hidden
+      aria-label="Access and data settings"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="panel-header">
+        <div class="panel-title-row">
+          <img src="./assets/shield-task.svg" alt="" width="24" height="24" />
+          <h2>Access &amp; data settings</h2>
+        </div>
+        <button class="icon-btn" id="closePanel" type="button" aria-label="Close panel">
+          <img src="./assets/dismiss.svg" alt="" width="20" height="20" />
+        </button>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Settings sections">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="access" type="button">
+          Access
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="attributes" type="button">
+          Attributes
+        </button>
+      </div>
+
+      <div class="tab-panel" id="panel-access" role="tabpanel">
+        <p class="panel-intro">
+          Managers in your organization can access data about their own teams in
+          Workforce Insights. You can set up access to additional org data.
+          <a href="#" class="link">Learn more about managing Workforce Insights</a>
+        </p>
+
+        <section class="org-card">
+          <button class="org-card-toggle" type="button" id="toggleOrgCard" aria-expanded="true">
+            <span>Your organizational data</span>
+            <img
+              src="./assets/chevron.svg"
+              alt=""
+              width="20"
+              height="20"
+              class="chevron open"
+              id="orgChevron"
+            />
+          </button>
+          <div class="org-card-body" id="orgCardBody">
+            <p>
+              These people are allowed access to additional organizational data.
+              Limit their scope of access or remove their access any time.
+            </p>
+            <ul class="people-list" id="peopleList" hidden></ul>
+            <button class="btn secondary" id="giveAccessBtn" type="button">
+              Give access
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="tab-panel" id="panel-attributes" role="tabpanel" hidden>
+        <p class="panel-intro">
+          Review and manage the attributes used to generate Workforce Insights.
+          Attributes without descriptions may be excluded from answers.
+        </p>
+        <div class="attr-list">
+          <div class="attr-row">
+            <div>
+              <strong>Job family</strong>
+              <p>Groups roles used for span and composition insights.</p>
+            </div>
+            <span class="badge ok">Described</span>
+          </div>
+          <div class="attr-row">
+            <div>
+              <strong>Location</strong>
+              <p>City and region used for geo-distributed team views.</p>
+            </div>
+            <span class="badge warn">Needs description</span>
+          </div>
+          <div class="attr-row">
+            <div>
+              <strong>Manager hierarchy</strong>
+              <p>Reporting relationships for team-scoped access.</p>
+            </div>
+            <span class="badge ok">Described</span>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     <div class="overlay" id="overlay" hidden>
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
