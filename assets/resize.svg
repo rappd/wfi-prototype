@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Resize handler">
+<path id="Vector 1 (Stroke)" d="M9.77817 2.70733L2.70711 9.7784L2 9.07129L9.07107 2.00022L9.77817 2.70733Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear_0_1121)"/>
+<path id="Vector 2 (Stroke)" d="M10.2278 5.91442L5.98518 10.1571L5.27808 9.44995L9.52072 5.20731L10.2278 5.91442Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint1_linear_0_1121)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_1121" x1="5.53553" y1="5.53576" x2="6.24264" y2="6.24286" gradientUnits="userSpaceOnUse">
+<stop offset="0.369792" stop-color="#303030"/>
+<stop offset="1" stop-color="#BCBCBC"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_1121" x1="8.1065" y1="6.62152" x2="8.81361" y2="7.32863" gradientUnits="userSpaceOnUse">
+<stop offset="0.369792" stop-color="#303030"/>
+<stop offset="1" stop-color="#BCBCBC"/>
+</linearGradient>
+</defs>
+</svg>
