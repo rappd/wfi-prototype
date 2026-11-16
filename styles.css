@@ -204,7 +204,7 @@ a.link:hover { text-decoration: underline; }
 .composer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 16px;
   margin-bottom: 48px;
 }
@@ -262,9 +262,13 @@ a.link:hover { text-decoration: underline; }
 .suggestion-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 4px;
   width: 100%;
-  max-width: 708px;
+  /* Match composer-field: ghost-icon (40) + row gap (12) */
+  padding-left: 52px;
+  padding-right: 52px;
+  box-sizing: border-box;
 }
 
 .suggestion-row button {
